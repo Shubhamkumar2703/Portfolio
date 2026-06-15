@@ -8,10 +8,13 @@ import ProjectsSection from "@/components/sections/projects-section";
 import ContactSection from "@/components/sections/contact-section";
 import BackgroundGrid from "@/components/animations/background-grid";
 import CursorGlow from "@/components/animations/cursor-glow";
+import LoadingScreen from "@/components/animations/loading-screen";
+import GithubSection from "@/components/sections/github-section";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-black text-white">
+      <LoadingScreen />
       <CursorGlow />
       <BackgroundGrid />
       <Navbar />
@@ -19,6 +22,7 @@ export default function HomePage() {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
+      <GithubSection />
       <ContactSection />
       <Footer />
     </main>
