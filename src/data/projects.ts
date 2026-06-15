@@ -1,5 +1,6 @@
 export const projects = [
   {
+    slug: "linkly",
     title: "Linkly",
     description:
       "A full-stack URL shortener platform with analytics dashboard, secure authentication, and optimized URL management.",
@@ -19,6 +20,7 @@ export const projects = [
   },
 
   {
+    slug: "social-media",
     title: "Social Media App",
     description:
       "A scalable social media platform supporting posts, likes, comments, authentication, and image uploads.",
@@ -38,6 +40,7 @@ export const projects = [
   },
 
   {
+    slug: "hotel-rating",
     title: "Hotel Rating System",
     description:
       "Microservices-based hotel rating system using Spring Cloud, Eureka, API Gateway, and Resilience4j.",

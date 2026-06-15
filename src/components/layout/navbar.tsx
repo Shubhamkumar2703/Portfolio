@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "./container";
 import { useActiveSection } from "@/hooks/use-active-section";
+import ThemeToggle from "../common/theme-toggle";
 
 const navLinks = [
   {
@@ -21,6 +22,10 @@ const navLinks = [
     href: "#projects",
   },
   {
+  name: "Experience",
+  href: "#experience",
+ },
+  {
     name: "Contact",
     href: "#contact",
   },
@@ -33,7 +38,7 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/30 backdrop-blur-xl">
       <Container>
         <div className="flex h-20 items-center justify-between">
-          
+          <ThemeToggle />
           {/* LOGO */}
           <Link
             href="/"

@@ -3,17 +3,77 @@
 import { motion } from "framer-motion";
 import Container from "../layout/container";
 import SectionHeading from "../common/section-heading";
-import { Globe, UserPlus, Mail } from "lucide-react";
+import { Mail, Globe, UserPlus } from "lucide-react";
 import Link from "next/link";
 import { toast } from "sonner";
+import { useState } from "react";
 
 export default function ContactSection() {
-  const handleSubmit = (
+  const [loading, setLoading] =
+    useState(false);
+
+  const [formData, setFormData] =
+    useState({
+      name: "",
+      email: "",
+      message: "",
+    });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
 
-    toast.success("Message sent successfully 🚀");
+    try {
+      setLoading(true);
+
+      const response = await fetch(
+        "/api/contact",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+          },
+
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          "Failed to send message"
+        );
+      }
+
+      toast.success(
+        "Message sent successfully 🚀"
+      );
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error(
+        "Something went wrong."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -21,7 +81,6 @@ export default function ContactSection() {
       id="contact"
       className="relative py-28"
     >
-      {/* BACKGROUND GLOW */}
       <div className="absolute left-1/2 top-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
 
       <Container>
@@ -32,17 +91,25 @@ export default function ContactSection() {
 
         <div className="grid gap-12 lg:grid-cols-2">
           
-          {/* LEFT CONTENT */}
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{
+              opacity: 0,
+              x: -30,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
             viewport={{ once: true }}
           >
             <p className="max-w-lg text-lg leading-relaxed text-zinc-400">
               I&apos;m currently open to internships,
-              freelance opportunities, and exciting
-              full-stack development projects.
+              freelance opportunities,
+              and exciting development projects.
             </p>
 
             <div className="mt-10 space-y-5">
@@ -75,12 +142,20 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* CONTACT FORM */}
+          {/* FORM */}
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{
+              opacity: 0,
+              x: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
             viewport={{ once: true }}
             className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
           >
@@ -93,7 +168,10 @@ export default function ContactSection() {
 
                 <input
                   type="text"
+                  name="name"
                   required
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 outline-none transition-all focus:border-blue-500"
                 />
               </div>
@@ -105,7 +183,10 @@ export default function ContactSection() {
 
                 <input
                   type="email"
+                  name="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 outline-none transition-all focus:border-blue-500"
                 />
               </div>
@@ -116,17 +197,23 @@ export default function ContactSection() {
                 </label>
 
                 <textarea
-                  required
                   rows={5}
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 outline-none transition-all focus:border-blue-500"
                 />
               </div>
 
               <button
+                disabled={loading}
                 type="submit"
-                className="w-full rounded-xl bg-white px-6 py-4 font-medium text-black transition-all hover:scale-[1.02]"
+                className="w-full rounded-xl bg-white px-6 py-4 font-medium text-black transition-all hover:scale-[1.02] disabled:opacity-50"
               >
-                Send Message
+                {loading
+                  ? "Sending..."
+                  : "Send Message"}
               </button>
             </div>
           </motion.form>
