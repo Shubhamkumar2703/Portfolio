@@ -7,6 +7,9 @@ import ThemeProvider from "@/components/common/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+  "http://localhost:3000"
+  ),
   title: {
     default: "Shubham Kumar",
     template: "%s | Shubham Kumar",

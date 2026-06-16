@@ -11,6 +11,7 @@ import CursorGlow from "@/components/animations/cursor-glow";
 import LoadingScreen from "@/components/animations/loading-screen";
 import GithubSection from "@/components/sections/github-section";
 import ExperienceSection from "@/components/sections/experience-section";
+import AIChatbot from "@/components/common/ai-chatbot";
 
 export default function HomePage() {
   return (
@@ -27,6 +28,7 @@ export default function HomePage() {
       <GithubSection />
       <ContactSection />
       <Footer />
+      <AIChatbot />
     </main>
   );
 }
