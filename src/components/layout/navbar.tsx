@@ -6,7 +6,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "./container";
 import { useActiveSection } from "@/hooks/use-active-section";
-import ThemeToggle from "../common/theme-toggle";
 
 const navLinks = [
   {
@@ -38,12 +37,8 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/30 backdrop-blur-xl">
       <Container>
         <div className="flex h-20 items-center justify-between">
-          <ThemeToggle />
           {/* LOGO */}
-          <Link
-            href="/"
-            className="text-xl font-bold tracking-wide"
-          >
+          <Link href="/" className="text-xl font-bold tracking-wide">
             Portfolio
           </Link>
 
@@ -75,35 +70,33 @@ export default function Navbar() {
     );
   })}
 </nav>
-
           {/* RESUME BUTTON */}
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            className="hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium backdrop-blur-lg transition-all hover:border-white/20 hover:bg-white/10 md:block"
-          >
-            Resume
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/resume.pdf"
+              target="_blank"
+              className="hidden rounded-xl border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium backdrop-blur-lg transition-all hover:border-white/20 hover:bg-white/10 md:block"
+            >
+              Resume
+            </Link>
 
-          {/* MOBILE MENU BUTTON */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden"
-          >
-            {isOpen ? <X /> : <Menu />}
-          </button>
+            {/* MOBILE MENU BUTTON */}
+            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
+              {isOpen ? <X /> : <Menu />}
+            </button>
+          </div>
         </div>
       </Container>
 
       {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-white/10 bg-black/95 backdrop-blur-xl md:hidden"
+            className="border-t border-white/10 bg-[rgba(var(--background-rgb)/0.95)] backdrop-blur-xl md:hidden"
           >
             <Container>
               <div className="flex flex-col py-6">
@@ -127,7 +120,7 @@ export default function Navbar() {
                 </Link>
               </div>
             </Container>
-          </motion.div>
+              </motion.div>
         )}
       </AnimatePresence>
     </header>

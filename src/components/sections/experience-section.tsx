@@ -20,7 +20,7 @@ export default function ExperienceSection() {
       <Container>
         <SectionHeading
           subtitle="Experience & Achievements"
-          title="Leadership, Growth & Technical Journey"
+          title="Technical Journey"
         />
 
         <div className="grid gap-16 lg:grid-cols-2">

@@ -49,12 +49,13 @@ export default function ProjectCard({
             target="_blank"
             className="rounded-xl border border-white/10 bg-black/40 p-3 backdrop-blur-xl transition-all hover:bg-white hover:text-black"
           >
-            <Globe size={18} />
+            <ArrowUpRight size={18} />
           </Link>
 
           <Link
             href={live}
             target="_blank"
+            
             className="rounded-xl border border-white/10 bg-black/40 p-3 backdrop-blur-xl transition-all hover:bg-white hover:text-black"
           >
             <Globe size={18} />

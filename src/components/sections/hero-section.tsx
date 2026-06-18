@@ -62,7 +62,7 @@ export default function HeroSection() {
             <div className="mt-10 flex items-center gap-5">
               
               <Link
-                href="https://github.com/"
+                href="https://github.com/Shubhamkumar2703/"
                 target="_blank"
                 className="rounded-full border border-zinc-800 p-3 text-zinc-400 transition-all hover:border-zinc-600 hover:text-white"
               >
@@ -70,7 +70,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/shubham-kumar27034/"
                 target="_blank"
                 className="rounded-full border border-zinc-800 p-3 text-zinc-400 transition-all hover:border-zinc-600 hover:text-white"
               >
@@ -78,7 +78,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="mailto:youremail@gmail.com"
+                href="mailto:shubham27034@gmail.com"
                 className="rounded-full border border-zinc-800 p-3 text-zinc-400 transition-all hover:border-zinc-600 hover:text-white"
               >
                 <Mail size={20} />
@@ -120,9 +120,11 @@ export default function HeroSection() {
 
                   <div className="mt-3 flex flex-wrap gap-2">
                     {[
-                      "Next.js",
-                      "React",
+                      "Java",
                       "Spring Boot",
+                      "React",
+                      "TypeScript",
+                      "Next.js",
                       "Node.js",
                       "MongoDB",
                       "PostgreSQL",
@@ -143,7 +145,7 @@ export default function HeroSection() {
                   </p>
 
                   <h3 className="mt-1 text-lg font-medium">
-                    India 🇮🇳
+                    Indore, India 🇮🇳
                   </h3>
                 </div>
               </div>

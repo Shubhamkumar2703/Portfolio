@@ -18,7 +18,7 @@ export default function ProjectsSection() {
       <Container>
         <SectionHeading
           subtitle="Featured Projects"
-          title="Selected Work & Engineering Projects"
+          title="Projects"
         />
 
         <div className="grid gap-8 lg:grid-cols-2">

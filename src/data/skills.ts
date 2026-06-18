@@ -2,24 +2,28 @@ export const skillCategories = [
   {
     title: "Frontend",
     skills: [
-      "Next.js",
-      "React",
-      "TypeScript",
+      "HTML",
       "JavaScript",
+      "TypeScript",
       "Tailwind CSS",
+      "React",
       "Redux",
+      "Next.js",
+      "React libraries",
     ],
   },
 
   {
     title: "Backend",
     skills: [
+      "Spring Boot",
+      "JPA/Hibernate",
       "Node.js",
       "Express.js",
-      "Spring Boot",
       "REST APIs",
       "JWT",
       "Microservices",
+      "System Design",
     ],
   },
 

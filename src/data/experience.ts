@@ -1,26 +1,16 @@
 export const experiences = [
   {
-    title: "Campus Ambassador",
-    organization: "Physics Wallah (PW)",
-    period: "2024 - Present",
-
+    title: "Software Developer & Testing Intern",
+    organization: "LZCAL.Inc",
+    period: "June 2026 - Present",
     description:
-      "Represented the brand at campus level, promoted educational initiatives, and engaged students through outreach activities.",
-  },
-
-  {
-    title: "Campus Ambassador",
-    organization: "E-Cell IIT Bombay",
-    period: "2024 - Present",
-
-    description:
-      "Collaborated in entrepreneurship-focused initiatives, event promotions, and student engagement activities.",
+      "Developed and tested web applications, ensuring functionality, performance, and user experience. Collaborated with cross-functional teams to deliver high-quality software solutions.",
   },
 
   {
     title: "Campus Ambassador",
     organization: "Take U Forward (TUF)",
-    period: "2025 - Present",
+    period: "July2025 - october 2025",
 
     description:
       "Promoted coding culture, DSA learning initiatives, and helped students explore structured problem-solving paths.",
@@ -29,10 +19,10 @@ export const experiences = [
 
 export const achievements = [
   {
-    title: "200+ DSA Problems Solved",
+    title: "250+ DSA Problems Solved",
 
     description:
-      "Solved 200+ Data Structures & Algorithms problems using Java on Take U Forward (Striver).",
+      "Solved 250+ Data Structures & Algorithms problems using Java on Take U Forward (Striver).",
   },
 
   {
@@ -49,10 +39,4 @@ export const achievements = [
       "Participated in hackathon environment focused on collaborative innovation and rapid prototyping.",
   },
 
-  {
-    title: "Full Stack Projects",
-
-    description:
-      "Built scalable MERN and Spring Boot applications with authentication, APIs, and deployment pipelines.",
-  },
 ];

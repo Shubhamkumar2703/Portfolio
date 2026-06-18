@@ -45,7 +45,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <p className="text-lg leading-relaxed text-zinc-400">
-              I&apos;m Shubham Kumar, a Full Stack Developer and
+              I&apos;m Shubham Kumar, a <strong>Software Developer intern in LZCAL.Inc</strong> and an
               Electronics & Communication Engineering student at
               Jabalpur Engineering College.
             </p>
